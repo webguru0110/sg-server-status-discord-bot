@@ -1,0 +1,13 @@
+import { APIEmbed } from 'discord-api-types/v10';
+
+const generateErrorEmbed = ({ host, port }: ServerAddress): APIEmbed => ({
+  title: 'Сервер не удалось обновить',
+  color: 0o0,
+  timestamp: new Date().toISOString(),
+  thumbnail: {
+    url: 'https://cdn.discordapp.com/icons/701475661948125244/5ebfd97604e5d81775204183e260f297.webp',
+  },
+  description: `Сервер по адресу \`${host}:${port}\` недоступен или выключен.`,
+});
+
+export default generateErrorEmbed;
